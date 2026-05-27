@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { CheckCircle2 } from 'lucide-react'
+import { CheckCircle2, Phone, MessageCircle } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import MultiStepForm from '@/components/cotizacion/MultiStepForm'
 
@@ -62,7 +62,7 @@ export default function CotizacionPage() {
                     href="tel:+18097136272"
                     className="flex items-center gap-3 text-white font-bold hover:text-gold transition-colors"
                   >
-                    <span className="text-2xl">📞</span>
+                    <Phone className="w-5 h-5 text-gold" />
                     (809) 713-6272
                   </a>
                   <a
@@ -71,7 +71,7 @@ export default function CotizacionPage() {
                     rel="noopener noreferrer"
                     className="mt-3 flex items-center gap-3 text-white font-bold hover:text-gold transition-colors"
                   >
-                    <span className="text-2xl">💬</span>
+                    <MessageCircle className="w-5 h-5 text-gold" />
                     WhatsApp
                   </a>
                 </div>

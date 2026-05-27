@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Target, Eye, Heart, Award } from 'lucide-react'
+import { Target, Eye, Heart, Lightbulb, Leaf, Shield, Users } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import FinalCTA from '@/components/home/FinalCTA'
 
@@ -41,12 +41,12 @@ const team = [
 ]
 
 const values = [
-  { icon: '🎯', title: 'Excelencia',    desc: 'Entregamos proyectos de la más alta calidad, sin atajos ni compromisos.' },
-  { icon: '🤝', title: 'Compromiso',    desc: 'Nos comprometemos con los plazos, los precios y los resultados acordados.' },
-  { icon: '💡', title: 'Innovación',    desc: 'Adoptamos las últimas tecnologías para ofrecer soluciones más eficientes.' },
-  { icon: '🌿', title: 'Sostenibilidad', desc: 'Contribuimos activamente a un futuro más verde para República Dominicana.' },
-  { icon: '🛡️', title: 'Integridad',   desc: 'Actuamos con honestidad y transparencia en cada etapa del proyecto.' },
-  { icon: '👥', title: 'Trabajo en equipo', desc: 'Nuestro equipo coordinado garantiza resultados consistentes y profesionales.' },
+  { icon: Target,    title: 'Excelencia',        desc: 'Entregamos proyectos de la más alta calidad, sin atajos ni compromisos.' },
+  { icon: Heart,     title: 'Compromiso',         desc: 'Nos comprometemos con los plazos, los precios y los resultados acordados.' },
+  { icon: Lightbulb, title: 'Innovación',         desc: 'Adoptamos las últimas tecnologías para ofrecer soluciones más eficientes.' },
+  { icon: Leaf,      title: 'Sostenibilidad',     desc: 'Contribuimos activamente a un futuro más verde para República Dominicana.' },
+  { icon: Shield,    title: 'Integridad',         desc: 'Actuamos con honestidad y transparencia en cada etapa del proyecto.' },
+  { icon: Users,     title: 'Trabajo en equipo',  desc: 'Nuestro equipo coordinado garantiza resultados consistentes y profesionales.' },
 ]
 
 const certifications = [
@@ -180,7 +180,9 @@ export default function NosotrosPage() {
             {values.map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 0.07}>
                 <div className="bg-white rounded-xl p-5 border border-gray-100 text-center hover:border-gold/40 hover:shadow-md transition-all">
-                  <div className="text-3xl mb-3">{v.icon}</div>
+                  <div className="w-10 h-10 bg-navy/10 rounded-lg flex items-center justify-center mb-3 mx-auto">
+                    <v.icon className="w-5 h-5 text-navy" />
+                  </div>
                   <h4 className="text-navy font-bold text-sm mb-1">{v.title}</h4>
                   <p className="text-gray-400 text-xs leading-relaxed">{v.desc}</p>
                 </div>

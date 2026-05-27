@@ -155,7 +155,7 @@ export default function Footer() {
             © {new Date().getFullYear()} EILEN Electric Service. Todos los derechos reservados.
           </p>
           <p className="text-lgray text-xs">
-            Hecho con <span className="text-gold">♥</span> en Santiago, RD
+            Santiago, RD
           </p>
         </div>
       </div>

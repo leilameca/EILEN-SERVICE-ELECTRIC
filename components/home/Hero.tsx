@@ -67,7 +67,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mt-12 flex flex-wrap justify-center gap-3 sm:gap-6"
         >
-          {['✓ Más de 150 proyectos', '✓ Garantía 10 años paneles', '✓ Servicio 24/7'].map((t) => (
+          {['Mas de 150 proyectos', 'Garantia 10 anos paneles', 'Servicio 24/7'].map((t) => (
             <span key={t} className="text-white/50 text-xs sm:text-sm">{t}</span>
           ))}
         </motion.div>
