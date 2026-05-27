@@ -2,29 +2,37 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const slides = [
   {
     src: '/hero-1.jpg',
+    alt: 'Instalación de paneles solares residencial - EILEN Electric Service',
     gradient: 'linear-gradient(135deg, #0A2A4A 0%, #1B4F72 50%, #0A2A4A 100%)',
   },
   {
     src: '/hero-2.jpg',
+    alt: 'Sistema fotovoltaico comercial - EILEN Electric Service',
     gradient: 'linear-gradient(135deg, #1B4F72 0%, #3A6B8A 50%, #0A2A4A 100%)',
   },
   {
     src: '/hero-3.jpg',
+    alt: 'Equipo técnico EILEN en instalación solar',
     gradient: 'linear-gradient(135deg, #0A2A4A 0%, #3A6B8A 40%, #1B4F72 100%)',
   },
 ]
 
 export default function HeroCarousel() {
-  const [current, setCurrent] = useState(0)
-  const [paused,  setPaused]  = useState(false)
+  const [current,  setCurrent]  = useState(0)
+  const [paused,   setPaused]   = useState(false)
+  const [imgError, setImgError] = useState([false, false, false])
 
   const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), [])
   const prev = useCallback(() => setCurrent((c) => (c - 1 + slides.length) % slides.length), [])
+
+  const handleError = (i: number) =>
+    setImgError((prev) => { const n = [...prev]; n[i] = true; return n })
 
   useEffect(() => {
     if (paused) return
@@ -50,18 +58,22 @@ export default function HeroCarousel() {
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: 'easeInOut' }}
             >
-              {/* Gradient base — siempre visible, fallback si la foto no existe */}
+              {/* Gradiente base — siempre visible */}
               <div className="absolute inset-0" style={{ background: slide.gradient }} />
 
-              {/* Foto real via CSS background — falla silenciosamente si no existe */}
-              <div
-                className="absolute inset-0 bg-center bg-cover bg-no-repeat"
-                style={{ backgroundImage: `url('${slide.src}')` }}
-                role="img"
-                aria-hidden="true"
-              />
+              {/* Foto real — oculta si falla la carga */}
+              {!imgError[i] && (
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  className="object-cover"
+                  priority={i === 0}
+                  onError={() => handleError(i)}
+                />
+              )}
 
-              {/* Overlay oscuro para legibilidad del texto */}
+              {/* Overlay oscuro */}
               <div className="absolute inset-0 bg-navy/60" />
             </motion.div>
           ) : null
