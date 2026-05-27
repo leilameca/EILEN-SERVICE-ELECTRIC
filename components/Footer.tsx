@@ -31,7 +31,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-3 mb-5 group">
               <img
-                src={`${BASE}/logo.png`}
+                src={`${BASE}/images/logo.png`}
                 alt="EILEN Electric Service"
                 className="h-20 w-auto group-hover:scale-105 transition-transform duration-200"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(245,168,0,0.2))' }}

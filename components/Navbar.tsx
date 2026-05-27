@@ -41,7 +41,7 @@ export default function Navbar() {
           {/* Logo + wordmark */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
             <img
-              src={`${BASE}/logo.png`}
+              src={`${BASE}/images/logo.png`}
               alt="EILEN Electric Service"
               className="h-16 md:h-24 w-auto group-hover:scale-105 transition-transform duration-200"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(245,168,0,0.25))' }}

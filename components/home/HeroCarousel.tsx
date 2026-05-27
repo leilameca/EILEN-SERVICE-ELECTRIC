@@ -8,17 +8,17 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const slides = [
   {
-    src: '/hero-1.jpg',
+    src: '/images/hero-1.jpg',
     alt: 'Instalación de paneles solares residencial - EILEN Electric Service',
     gradient: 'linear-gradient(135deg, #0A2A4A 0%, #1B4F72 50%, #0A2A4A 100%)',
   },
   {
-    src: '/hero-2.jpg',
+    src: '/images/hero-2.jpg',
     alt: 'Sistema fotovoltaico comercial - EILEN Electric Service',
     gradient: 'linear-gradient(135deg, #1B4F72 0%, #3A6B8A 50%, #0A2A4A 100%)',
   },
   {
-    src: '/hero-3.jpg',
+    src: '/images/hero-3.jpg',
     alt: 'Equipo técnico EILEN en instalación solar',
     gradient: 'linear-gradient(135deg, #0A2A4A 0%, #3A6B8A 40%, #1B4F72 100%)',
   },
