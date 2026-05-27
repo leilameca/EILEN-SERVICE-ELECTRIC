@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Variables CSS ── */
+:root {
+  --navy:  #0A2A4A;
+  --gold:  #F5A800;
+  --sky:   #4AACDC;
+  --panel: #1B4F72;
+  --slate: #3A6B8A;
+  --lgray: #B0BEC5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: #0D0D0D;
+}
+
+/* ── Botones (sin @apply de colores custom) ── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  background-color: #F5A800;
+  color: #0A2A4A;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(245, 168, 0, 0.3);
+  border: 2px solid #F5A800;
+  cursor: pointer;
+  text-decoration: none;
+  justify-content: center;
+}
+.btn-gold:hover {
+  background-color: #f0a000;
+  box-shadow: 0 6px 20px rgba(245, 168, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid #F5A800;
+  color: #F5A800;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  justify-content: center;
+}
+.btn-outline:hover {
+  background-color: #F5A800;
+  color: #0A2A4A;
+}
+
+/* ── Utilidades de sección ── */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0A2A4A;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .section-title { font-size: 2.25rem; }
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #3A6B8A;
+  margin-top: 0.75rem;
+  max-width: 42rem;
+  line-height: 1.6;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Separador dorado ── */
+.divider-gold {
+  background: linear-gradient(90deg, transparent, #F5A800, transparent);
+  height: 2px;
+  width: 100%;
+}
