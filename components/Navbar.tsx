@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import Image from 'next/image'
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const links = [
   { href: '/',           label: 'Inicio' },
@@ -40,14 +40,11 @@ export default function Navbar() {
 
           {/* Logo + wordmark */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <Image
-              src="/logo.png"
+            <img
+              src={`${BASE}/logo.png`}
               alt="EILEN Electric Service"
-              width={80}
-              height={90}
               className="h-16 md:h-24 w-auto group-hover:scale-105 transition-transform duration-200"
               style={{ filter: 'drop-shadow(0 2px 8px rgba(245,168,0,0.25))' }}
-              priority
             />
             <div className="leading-tight hidden sm:block">
               <span className="block text-white font-extrabold text-xl md:text-2xl tracking-wide">

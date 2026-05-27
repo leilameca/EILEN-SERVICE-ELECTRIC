@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const slides = [
   {
@@ -63,12 +64,10 @@ export default function HeroCarousel() {
 
               {/* Foto real — oculta si falla la carga */}
               {!imgError[i] && (
-                <Image
-                  src={slide.src}
+                <img
+                  src={`${BASE}${slide.src}`}
                   alt={slide.alt}
-                  fill
-                  className="object-cover"
-                  priority={i === 0}
+                  className="absolute inset-0 w-full h-full object-cover"
                   onError={() => handleError(i)}
                 />
               )}

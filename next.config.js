@@ -11,6 +11,10 @@ const nextConfig = {
   images: {
     unoptimized: true,       // requerido para export estático
   },
+  env: {
+    // Expuesto al cliente para prefixar rutas de imágenes en public/
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? `/${repo}` : '',
+  },
 }
 
 module.exports = nextConfig
