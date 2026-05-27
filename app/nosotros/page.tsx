@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Target, Eye, Heart, Lightbulb, Leaf, Shield, Users } from 'lucide-react'
+import { Target, Eye, Heart, Award, Lightbulb, Leaf, Shield, Users } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 import FinalCTA from '@/components/home/FinalCTA'
 
